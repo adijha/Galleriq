@@ -18,8 +18,7 @@ function App() {
       <Offers />
       <Navbar />
       
-      
-      <div className="container">
+        <div className="container">
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
       </div>
