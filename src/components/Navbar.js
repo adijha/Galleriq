@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { itemTotal } from '../pages/cartHelpers';
 
 import '../styles/navbar.css'
 
@@ -19,7 +20,7 @@ export default function Navbar() {
       <span className="icon-bar" />
       <span className="icon-bar" />
     </button>
-    <Link to="/home" className="navbar-brand"><img className="logo" src={logo} alt="Galleriq" /></Link>
+    <Link to="/" className="navbar-brand"><img className="logo" src={logo} alt="Galleriq" /></Link>
   </div>
   <div id="navbarCollapse" className="collapse navbar-collapse">
     <ul className="nav navbar-nav nav-center">
@@ -29,11 +30,11 @@ export default function Navbar() {
       <li><Link to="#">Canvas Ideas</Link></li>
       <li><Link to="#">Offers</Link></li>
       <li><Link to="#">Blog</Link></li>
-      <li><Link className="btn btn-warning nav-btn" to="#">Create a Canvas</Link></li>
+      <li><Link className="btn btn-warning nav-btn" to="/CanvasPrint">Create a Canvas</Link></li>
     </ul>
     <ul className="nav navbar-nav navbar-right">
       <li><Link to="#"><img src={search} alt="" /></Link></li>
-      <li><Link to="#"><img src={cart} alt="" /></Link></li>
+          <li><Link to="/cart"><img src={ cart } alt="" /><sup><small className="cart-badge">{itemTotal()}</small></sup></Link></li>
       <li><Link className="login-nav" to><img src={account} alt="" /></Link></li>
     </ul>
   </div>
